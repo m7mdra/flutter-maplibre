@@ -175,31 +175,31 @@ class FullMapState extends State<FullMap> {
   static const _stylesAndLoaders = [
     StyleInfo(
       name: "Vector",
-      baseStyle: MapboxStyles.LIGHT,
+      baseStyle: MapboxStyles.MAPBOX_DEMO,
       addDetails: addVector,
       position: CameraPosition(target: LatLng(33.3832, -118.4333), zoom: 12),
     ),
     StyleInfo(
       name: "Dem",
-      baseStyle: MapboxStyles.EMPTY,
+      baseStyle:MapboxStyles.MAPBOX_DEMO,
       addDetails: addDem,
       position: CameraPosition(target: LatLng(33.5, -118.1), zoom: 8),
     ),
     StyleInfo(
       name: "Geojson cluster",
-      baseStyle: MapboxStyles.LIGHT,
+      baseStyle: MapboxStyles.MAPBOX_DEMO,
       addDetails: addGeojsonCluster,
       position: CameraPosition(target: LatLng(33.5, -118.1), zoom: 5),
     ),
     StyleInfo(
       name: "Raster",
-      baseStyle: MapboxStyles.EMPTY,
+      baseStyle: MapboxStyles.MAPBOX_DEMO,
       addDetails: addRaster,
       position: CameraPosition(target: LatLng(40, -100), zoom: 3),
     ),
     StyleInfo(
       name: "Image",
-      baseStyle: MapboxStyles.DARK,
+      baseStyle: MapboxStyles.MAPBOX_DEMO,
       addDetails: addImage,
       position: CameraPosition(target: LatLng(43, -75), zoom: 6),
     ),
@@ -207,7 +207,7 @@ class FullMapState extends State<FullMap> {
     if (kIsWeb)
       StyleInfo(
         name: "Video",
-        baseStyle: MapboxStyles.SATELLITE,
+        baseStyle: MapboxStyles.MAPBOX_DEMO,
         addDetails: addVideo,
         position: CameraPosition(
             target: LatLng(37.562984, -122.514426), zoom: 17, bearing: -96),

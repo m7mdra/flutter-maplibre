@@ -49,7 +49,7 @@ class FullMapState extends State<FullMap> {
           ),
         ),
         body: MapboxMap(
-          styleString: isLight ? MapboxStyles.LIGHT : MapboxStyles.DARK,
+          styleString: MapboxStyles.MAPBOX_DEMO,
           accessToken: MapsDemo.ACCESS_TOKEN,
           onMapCreated: _onMapCreated,
           initialCameraPosition: const CameraPosition(target: LatLng(0.0, 0.0)),

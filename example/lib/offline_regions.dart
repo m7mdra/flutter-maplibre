@@ -26,19 +26,19 @@ final List<OfflineRegionDefinition> regionDefinitions = [
     bounds: hawaiiBounds,
     minZoom: 3.0,
     maxZoom: 8.0,
-    mapStyleUrl: MapboxStyles.MAPBOX_STREETS,
+    mapStyleUrl: MapboxStyles.MAPBOX_DEMO,
   ),
   OfflineRegionDefinition(
     bounds: santiagoBounds,
     minZoom: 10.0,
     maxZoom: 16.0,
-    mapStyleUrl: MapboxStyles.MAPBOX_STREETS,
+    mapStyleUrl: MapboxStyles.MAPBOX_DEMO,
   ),
   OfflineRegionDefinition(
     bounds: aucklandBounds,
     minZoom: 13.0,
     maxZoom: 16.0,
-    mapStyleUrl: MapboxStyles.MAPBOX_STREETS,
+    mapStyleUrl: MapboxStyles.MAPBOX_DEMO,
   ),
 ];
 

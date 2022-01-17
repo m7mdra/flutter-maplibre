@@ -45,7 +45,6 @@ class _AnnotationOrderBodyState extends State<AnnotationOrderBody> {
                     width: 250.0,
                     height: 250.0,
                     child: MapboxMap(
-                      accessToken: MapsDemo.ACCESS_TOKEN,
                       onMapCreated: onMapCreatedOne,
                       onStyleLoadedCallback: () => onStyleLoaded(controllerOne),
                       initialCameraPosition: CameraPosition(

@@ -29,11 +29,7 @@ import androidx.lifecycle.LifecycleOwner;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
-import com.mapbox.android.core.location.LocationEngine;
-import com.mapbox.android.core.location.LocationEngineCallback;
-import com.mapbox.android.core.location.LocationEngineProvider;
-import com.mapbox.android.core.location.LocationEngineResult;
-import com.mapbox.android.telemetry.TelemetryEnabler;
+
 import com.mapbox.geojson.Feature;
 import com.mapbox.geojson.FeatureCollection;
 import com.mapbox.mapboxsdk.Mapbox;
@@ -47,6 +43,10 @@ import com.mapbox.mapboxsdk.geometry.VisibleRegion;
 import com.mapbox.mapboxsdk.location.LocationComponent;
 import com.mapbox.mapboxsdk.location.LocationComponentOptions;
 import com.mapbox.mapboxsdk.location.OnCameraTrackingChangedListener;
+import com.mapbox.mapboxsdk.location.engine.LocationEngine;
+import com.mapbox.mapboxsdk.location.engine.LocationEngineCallback;
+import com.mapbox.mapboxsdk.location.engine.LocationEngineProvider;
+import com.mapbox.mapboxsdk.location.engine.LocationEngineResult;
 import com.mapbox.mapboxsdk.location.modes.CameraMode;
 import com.mapbox.mapboxsdk.location.modes.RenderMode;
 import com.mapbox.mapboxsdk.maps.MapView;
@@ -170,11 +170,10 @@ final class MapboxMapController
     BinaryMessenger messenger,
     MapboxMapsPlugin.LifecycleProvider lifecycleProvider,
     MapboxMapOptions options,
-    String accessToken,
     String styleStringInitial,
     List<String> annotationOrder,
     List<String> annotationConsumeTapEvents) {
-    MapBoxUtils.getMapbox(context, accessToken);
+    MapBoxUtils.getMapbox(context);
     this.id = id;
     this.context = context;
     this.styleStringInitial = styleStringInitial;
@@ -786,14 +785,11 @@ final class MapboxMapController
         break;
       }
       case "map#setTelemetryEnabled": {
-        final boolean enabled = call.argument("enabled");
-        Mapbox.getTelemetry().setUserTelemetryRequestState(enabled);
         result.success(null);
         break;
       }
       case "map#getTelemetryEnabled": {
-        final TelemetryEnabler.State telemetryState = TelemetryEnabler.retrieveTelemetryStateFromPreferences();
-        result.success(telemetryState == TelemetryEnabler.State.ENABLED);
+        result.success(false);
         break;
       }
       case "map#invalidateAmbientCache": {

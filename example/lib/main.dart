@@ -77,18 +77,16 @@ class MapsDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('MapboxMaps examples')),
-      body: ACCESS_TOKEN.isEmpty || ACCESS_TOKEN.contains("YOUR_TOKEN")
-          ? buildAccessTokenWarning()
-          : ListView.separated(
-              itemCount: _allPages.length,
-              separatorBuilder: (BuildContext context, int index) =>
-                  const Divider(height: 1),
-              itemBuilder: (_, int index) => ListTile(
-                leading: _allPages[index].leading,
-                title: Text(_allPages[index].title),
-                onTap: () => _pushPage(context, _allPages[index]),
-              ),
-            ),
+      body: ListView.separated(
+        itemCount: _allPages.length,
+        separatorBuilder: (BuildContext context, int index) =>
+            const Divider(height: 1),
+        itemBuilder: (_, int index) => ListTile(
+          leading: _allPages[index].leading,
+          title: Text(_allPages[index].title),
+          onTap: () => _pushPage(context, _allPages[index]),
+        ),
+      ),
     );
   }
 

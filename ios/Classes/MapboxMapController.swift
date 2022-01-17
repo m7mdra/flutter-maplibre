@@ -40,11 +40,6 @@ class MapboxMapController: NSObject, FlutterPlatformView, MGLMapViewDelegate, Ma
         arguments args: Any?,
         registrar: FlutterPluginRegistrar
     ) {
-        if let args = args as? [String: Any] {
-            if let token = args["accessToken"] as? String? {
-                MGLAccountManager.accessToken = token
-            }
-        }
         mapView = MGLMapView(frame: frame)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.registrar = registrar
