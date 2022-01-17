@@ -1,6 +1,8 @@
 # Uncomment this line to define a global platform for your project
 platform :ios, '9.0'
 use_frameworks!
+pod 'MapLibre', :git =>  'https://github.com/m7mdra/maplibre-cocoapods.git'
+pod 'MapLibreAnnotationExtension', :git => 'https://github.com/m7mdra/maplibre-annotation-extension.git'
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
