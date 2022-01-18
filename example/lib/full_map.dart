@@ -21,10 +21,10 @@ class FullMap extends StatefulWidget {
 }
 
 class FullMapState extends State<FullMap> {
-  MapboxMapController? mapController;
+  MaplibreMapController? mapController;
   var isLight = true;
 
-  _onMapCreated(MapboxMapController controller) {
+  _onMapCreated(MaplibreMapController controller) {
     mapController = controller;
   }
 
@@ -48,7 +48,7 @@ class FullMapState extends State<FullMap> {
             ),
           ),
         ),
-        body: MapboxMap(
+        body: MaplibreMap(
           styleString: MapboxStyles.MAPBOX_DEMO,
           accessToken: MapsDemo.ACCESS_TOKEN,
           onMapCreated: _onMapCreated,

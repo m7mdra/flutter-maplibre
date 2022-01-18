@@ -50,11 +50,11 @@ class PlaceFillBodyState extends State<PlaceFillBody> {
     ]
   ];
 
-  MapboxMapController? controller;
+  MaplibreMapController? controller;
   int _fillCount = 0;
   Fill? _selectedFill;
 
-  void _onMapCreated(MapboxMapController controller) {
+  void _onMapCreated(MaplibreMapController controller) {
     this.controller = controller;
     controller.onFillTapped.add(_onFillTapped);
   }
@@ -188,7 +188,7 @@ class PlaceFillBodyState extends State<PlaceFillBody> {
           child: SizedBox(
             width: 300.0,
             height: 200.0,
-            child: MapboxMap(
+            child: MaplibreMap(
               accessToken: MapsDemo.ACCESS_TOKEN,
               onMapCreated: _onMapCreated,
               onStyleLoadedCallback: _onStyleLoaded,

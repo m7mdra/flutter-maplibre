@@ -29,9 +29,9 @@ class ClickAnnotationBodyState extends State<ClickAnnotationBody> {
   ClickAnnotationBodyState();
   static const LatLng center = const LatLng(-33.88, 151.16);
 
-  MapboxMapController? controller;
+  MaplibreMapController? controller;
 
-  void _onMapCreated(MapboxMapController controller) {
+  void _onMapCreated(MaplibreMapController controller) {
     this.controller = controller;
     controller.onFillTapped.add(_onFillTapped);
     controller.onCircleTapped.add(_onCircleTapped);
@@ -131,7 +131,7 @@ class ClickAnnotationBodyState extends State<ClickAnnotationBody> {
 
   @override
   Widget build(BuildContext context) {
-    return MapboxMap(
+    return MaplibreMap(
       accessToken: MapsDemo.ACCESS_TOKEN,
       annotationOrder: [
         AnnotationType.fill,

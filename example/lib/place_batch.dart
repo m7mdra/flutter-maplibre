@@ -69,9 +69,9 @@ class BatchAddBodyState extends State<BatchAddBody> {
 
   static final LatLng center = const LatLng(-33.86711, 151.1947171);
 
-  late MapboxMapController controller;
+  late MaplibreMapController controller;
 
-  void _onMapCreated(MapboxMapController controller) {
+  void _onMapCreated(MaplibreMapController controller) {
     this.controller = controller;
   }
 
@@ -145,7 +145,7 @@ class BatchAddBodyState extends State<BatchAddBody> {
         Center(
           child: SizedBox(
             height: 200.0,
-            child: MapboxMap(
+            child: MaplibreMap(
               accessToken: MapsDemo.ACCESS_TOKEN,
               onMapCreated: _onMapCreated,
               initialCameraPosition: const CameraPosition(

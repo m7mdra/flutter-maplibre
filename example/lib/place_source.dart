@@ -36,9 +36,9 @@ class PlaceSymbolBodyState extends State<PlaceSymbolBody> {
 
   bool sourceAdded = false;
   bool layerAdded = false;
-  late MapboxMapController controller;
+  late MaplibreMapController controller;
 
-  void _onMapCreated(MapboxMapController controller) {
+  void _onMapCreated(MaplibreMapController controller) {
     this.controller = controller;
   }
 
@@ -101,7 +101,7 @@ class PlaceSymbolBodyState extends State<PlaceSymbolBody> {
           child: SizedBox(
             width: 300.0,
             height: 200.0,
-            child: MapboxMap(
+            child: MaplibreMap(
               accessToken: MapsDemo.ACCESS_TOKEN,
               onMapCreated: _onMapCreated,
               initialCameraPosition: const CameraPosition(

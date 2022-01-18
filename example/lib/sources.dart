@@ -8,7 +8,7 @@ import 'page.dart';
 class StyleInfo {
   final String name;
   final String baseStyle;
-  final Future<void> Function(MapboxMapController) addDetails;
+  final Future<void> Function(MaplibreMapController) addDetails;
   final CameraPosition position;
 
   const StyleInfo(
@@ -35,15 +35,15 @@ class FullMap extends StatefulWidget {
 }
 
 class FullMapState extends State<FullMap> {
-  MapboxMapController? controller;
+  MaplibreMapController? controller;
   final watercolorRasterId = "watercolorRaster";
   int selectedStyleId = 0;
 
-  _onMapCreated(MapboxMapController controller) {
+  _onMapCreated(MaplibreMapController controller) {
     this.controller = controller;
   }
 
-  static Future<void> addRaster(MapboxMapController controller) async {
+  static Future<void> addRaster(MaplibreMapController controller) async {
     await controller.addSource(
       "watercolor",
       RasterSourceProperties(
@@ -58,7 +58,7 @@ class FullMapState extends State<FullMap> {
         "watercolor", "watercolor", RasterLayerProperties());
   }
 
-  static Future<void> addGeojsonCluster(MapboxMapController controller) async {
+  static Future<void> addGeojsonCluster(MaplibreMapController controller) async {
     await controller.addSource(
         "earthquakes",
         GeojsonSourceProperties(
@@ -99,7 +99,7 @@ class FullMapState extends State<FullMap> {
         ));
   }
 
-  static Future<void> addVector(MapboxMapController controller) async {
+  static Future<void> addVector(MaplibreMapController controller) async {
     await controller.addSource(
         "terrain",
         VectorSourceProperties(
@@ -118,7 +118,7 @@ class FullMapState extends State<FullMap> {
         sourceLayer: "contour");
   }
 
-  static Future<void> addImage(MapboxMapController controller) async {
+  static Future<void> addImage(MaplibreMapController controller) async {
     await controller.addSource(
         "radar",
         ImageSourceProperties(
@@ -137,7 +137,7 @@ class FullMapState extends State<FullMap> {
     );
   }
 
-  static Future<void> addVideo(MapboxMapController controller) async {
+  static Future<void> addVideo(MaplibreMapController controller) async {
     await controller.addSource(
         "video",
         VideoSourceProperties(urls: [
@@ -157,7 +157,7 @@ class FullMapState extends State<FullMap> {
     );
   }
 
-  static Future<void> addDem(MapboxMapController controller) async {
+  static Future<void> addDem(MaplibreMapController controller) async {
     await controller.addSource(
         "dem",
         RasterDemSourceProperties(
@@ -242,7 +242,7 @@ class FullMapState extends State<FullMap> {
         ),
         body: Stack(
           children: [
-            MapboxMap(
+            MaplibreMap(
               styleString: styleInfo.baseStyle,
               accessToken: MapsDemo.ACCESS_TOKEN,
               onMapCreated: _onMapCreated,

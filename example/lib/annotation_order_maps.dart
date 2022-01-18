@@ -21,8 +21,8 @@ class AnnotationOrderBody extends StatefulWidget {
 }
 
 class _AnnotationOrderBodyState extends State<AnnotationOrderBody> {
-  late MapboxMapController controllerOne;
-  late MapboxMapController controllerTwo;
+  late MaplibreMapController controllerOne;
+  late MaplibreMapController controllerTwo;
 
   final LatLng center = const LatLng(36.580664, 32.5563837);
 
@@ -44,7 +44,7 @@ class _AnnotationOrderBodyState extends State<AnnotationOrderBody> {
                   child: SizedBox(
                     width: 250.0,
                     height: 250.0,
-                    child: MapboxMap(
+                    child: MaplibreMap(
                       onMapCreated: onMapCreatedOne,
                       onStyleLoadedCallback: () => onStyleLoaded(controllerOne),
                       initialCameraPosition: CameraPosition(
@@ -78,7 +78,7 @@ class _AnnotationOrderBodyState extends State<AnnotationOrderBody> {
                   child: SizedBox(
                     width: 250.0,
                     height: 250.0,
-                    child: MapboxMap(
+                    child: MaplibreMap(
                       accessToken: MapsDemo.ACCESS_TOKEN,
                       onMapCreated: onMapCreatedTwo,
                       onStyleLoadedCallback: () => onStyleLoaded(controllerTwo),
@@ -103,15 +103,15 @@ class _AnnotationOrderBodyState extends State<AnnotationOrderBody> {
     );
   }
 
-  void onMapCreatedOne(MapboxMapController controller) {
+  void onMapCreatedOne(MaplibreMapController controller) {
     this.controllerOne = controller;
   }
 
-  void onMapCreatedTwo(MapboxMapController controller) {
+  void onMapCreatedTwo(MaplibreMapController controller) {
     this.controllerTwo = controller;
   }
 
-  void onStyleLoaded(MapboxMapController controller) {
+  void onStyleLoaded(MaplibreMapController controller) {
     controller.addSymbol(
       SymbolOptions(
         geometry: LatLng(

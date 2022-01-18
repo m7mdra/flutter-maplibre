@@ -33,12 +33,12 @@ class LineBodyState extends State<LineBody> {
 
   static final LatLng center = const LatLng(-33.86711, 151.1947171);
 
-  MapboxMapController? controller;
+  MaplibreMapController? controller;
   int _lineCount = 0;
   Line? _selectedLine;
   final String _linePatternImage = "assets/fill/cat_silhouette_pattern.png";
 
-  void _onMapCreated(MapboxMapController controller) {
+  void _onMapCreated(MaplibreMapController controller) {
     this.controller = controller;
     controller.onLineTapped.add(_onLineTapped);
   }
@@ -162,7 +162,7 @@ class LineBodyState extends State<LineBody> {
         Center(
           child: SizedBox(
             height: 400.0,
-            child: MapboxMap(
+            child: MaplibreMap(
               accessToken: MapsDemo.ACCESS_TOKEN,
               onMapCreated: _onMapCreated,
               onStyleLoadedCallback: _onStyleLoadedCallback,

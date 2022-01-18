@@ -21,13 +21,13 @@ class LayerBody extends StatefulWidget {
 class LayerState extends State {
   static final LatLng center = const LatLng(-33.86711, 151.1947171);
 
-  late MapboxMapController controller;
+  late MaplibreMapController controller;
   Timer? timer;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: MapboxMap(
+      child: MaplibreMap(
         accessToken: MapsDemo.ACCESS_TOKEN,
         onMapCreated: _onMapCreated,
         onMapClick: (point, latLong) =>
@@ -42,7 +42,7 @@ class LayerState extends State {
     );
   }
 
-  void _onMapCreated(MapboxMapController controller) {
+  void _onMapCreated(MaplibreMapController controller) {
     this.controller = controller;
 
     controller.onFeatureTapped.add(onFeatureTap);
