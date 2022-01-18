@@ -2,9 +2,9 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:mapbox_gl/mapbox_gl.dart';
-import 'package:mapbox_gl_example/main.dart';
-import 'package:mapbox_gl_example/page.dart';
+import 'package:maplibre_gl/mapbox_gl.dart';
+import 'package:maplibre_gl_example/main.dart';
+import 'package:maplibre_gl_example/page.dart';
 
 class LayerPage extends ExamplePage {
   LayerPage() : super(const Icon(Icons.share), 'Layer');

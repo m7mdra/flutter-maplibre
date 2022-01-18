@@ -1,26 +1,26 @@
-name: mapbox_gl
+name: maplibre_gl
 description: A Flutter plugin for integrating Mapbox Maps inside a Flutter application on Android, iOS and web platfroms.
 version: 0.15.0
-homepage: https://github.com/tobrun/flutter-mapbox-gl
+homepage: https://github.com/m7mdra/maps
 
 dependencies:
   flutter:
     sdk: flutter
-  mapbox_gl_platform_interface:
+  maplibre_gl_platform_interface:
     git:
-      url: https://github.com/tobrun/flutter-mapbox-gl.git
-      path: mapbox_gl_platform_interface
-  mapbox_gl_web:
+      url: https://github.com/m7mdra/maps
+      path: maplibre_gl_platform_interface
+  maplibre_gl_web:
     git:
-      url: https://github.com/tobrun/flutter-mapbox-gl.git
-      path: mapbox_gl_web
+      url: https://github.com/m7mdra/maps
+      path: maplibre_gl_web
   collection: ^1.15.0
 
 dependency_overrides:
-  mapbox_gl_platform_interface:
-    path: ./mapbox_gl_platform_interface
-  mapbox_gl_web:
-    path: ./mapbox_gl_web
+  maplibre_gl_platform_interface:
+    path: ./maplibre_gl_platform_interface
+  maplibre_gl_web:
+    path: ./maplibre_gl_web
 
 flutter:
   plugin:

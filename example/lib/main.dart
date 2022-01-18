@@ -5,12 +5,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:location/location.dart';
-import 'package:mapbox_gl_example/custom_marker.dart';
-import 'package:mapbox_gl_example/full_map.dart';
-import 'package:mapbox_gl_example/offline_regions.dart';
-import 'package:mapbox_gl_example/place_batch.dart';
-import 'package:mapbox_gl_example/layer.dart';
-import 'package:mapbox_gl_example/sources.dart';
+import 'package:maplibre_gl_example/custom_marker.dart';
+import 'package:maplibre_gl_example/full_map.dart';
+import 'package:maplibre_gl_example/offline_regions.dart';
+import 'package:maplibre_gl_example/place_batch.dart';
+import 'package:maplibre_gl_example/layer.dart';
+import 'package:maplibre_gl_example/sources.dart';
 
 import 'animate_camera.dart';
 import 'annotation_order_maps.dart';

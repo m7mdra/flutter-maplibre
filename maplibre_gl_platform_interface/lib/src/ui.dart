@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-part of mapbox_gl_platform_interface;
+part of maplibre_gl_platform_interface;
 
 class MapboxStyles {
   static const String MAPBOX_DEMO = "https://demotiles.maplibre.org/style.json";

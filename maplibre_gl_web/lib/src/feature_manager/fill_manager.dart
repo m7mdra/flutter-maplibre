@@ -1,4 +1,4 @@
-part of mapbox_gl_web;
+part of maplibre_gl_web;
 
 class FillManager extends FeatureManager<FillOptions> {
   FillManager({
