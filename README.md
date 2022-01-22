@@ -15,7 +15,7 @@ dependencies:
     ...
     maplibre_gl:
       git:
-        url: https://github.com/m7mdra/maps.git
+        url: https://github.com/m7mdra/flutter-maplibre.git
         ref: master
         
 ```
