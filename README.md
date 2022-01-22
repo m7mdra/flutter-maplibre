@@ -1,49 +1,24 @@
-# Flutter Mapbox GL
+# Flutter Maplibre GL
+## This is a fork of [flutter-mapbox-gl](https://github.com/flutter-mapbox-gl/maps) replaceing mapbox with the open source [Maplibre](https://github.com/maplibre)
+> **Please note that this project is community driven and is not an official MapLibre product.** 
 
-> **Please note that this project is community driven and is not an official Mapbox product.** 
-> 
-> We welcome [feedback](https://github.com/tobrun/flutter-mapbox-gl/issues) and contributions.
 
-This Flutter plugin allows to show embedded interactive and customizable vector maps inside a Flutter widget. For the Android and iOS integration, we use [mapbox-gl-native](https://github.com/mapbox/mapbox-gl-native). For web, we rely on [mapbox-gl-js](https://github.com/mapbox/mapbox-gl-js). This project only supports a subset of the API exposed by these libraries. 
+This Flutter plugin allows to show embedded interactive and customizable vector maps inside a Flutter widget. For the Android and iOS integration, we use [maplibre-gl-native](https://github.com/maplibre/maplibre-gl-native). For web, we rely on [maplibre-gl-js](https://github.com/maplibre/maplibre-gl-js). This project only supports a subset of the API exposed by these libraries. 
 
 ![screenshot.png](screenshot.png)
 
 
 ## How to use
-
-This project is available on [pub.dev](https://pub.dev/packages/mapbox_gl), follow the [instructions](https://flutter.dev/docs/development/packages-and-plugins/using-packages#adding-a-package-dependency-to-an-app) to add a package into your flutter application. 
-
-### Private Mapbox access token
-
-This project does require a Mapbox access token to download the underlying Android/iOS SDKs. The secret access token must have the *Download: read* scope for
-[Android](https://docs.mapbox.com/android/maps/guides/install/) and/or 
-[iOS](https://docs.mapbox.com/ios/maps/guides/install/).
-
-If this configuration is not present, an error like the following appears during 
-the build process:
-
-#### Android
+This project is not yet available on pub.dev. You can use it by referencing it in your pubspec.yaml like this:
 ```
-* What went wrong:
-A problem occurred evaluating project ':mapbox_gl'.
-> SDK Registry token is null. See README.md for more information.
+dependencies:
+    ...
+    maplibre_gl:
+      git:
+        url: https://github.com/m7mdra/maps.git
+        ref: master
+        
 ```
-
-#### iOS
-```
-[!] Error installing Mapbox-iOS-SDK
-curl: (22) The requested URL returned error: 401 Unauthorized
-```
-
-### Public Mapbox access token
-
-Next to a private access token you will need to provide an public access token
-to retrieve the style and underlying resources. This can be done with running your application with an additional define statement:
-
-```
-flutter run -d {device_id} --dart-define=ACCESS_TOKEN=ADD_YOUR_TOKEN_HERE`
-```
-
 ## Supported API
 
 | Feature | Android | iOS | Web |
