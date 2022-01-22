@@ -7,6 +7,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart'; // ignore: unnecessary_import
 import 'package:maplibre_gl/mapbox_gl.dart';
+import 'package:maplibre_gl_example/styles.dart';
 
 import 'main.dart';
 import 'page.dart';
@@ -51,7 +52,6 @@ class _ScrollingMapBodyState extends State<ScrollingMapBody> {
                     width: 300.0,
                     height: 300.0,
                     child: MaplibreMap(
-                      accessToken: MapsDemo.ACCESS_TOKEN,
                       onMapCreated: onMapCreatedOne,
                       onStyleLoadedCallback: () => onStyleLoaded(controllerOne),
                       initialCameraPosition: CameraPosition(
@@ -87,7 +87,8 @@ class _ScrollingMapBodyState extends State<ScrollingMapBody> {
                     width: 300.0,
                     height: 300.0,
                     child: MaplibreMap(
-                      accessToken: MapsDemo.ACCESS_TOKEN,
+                      styleString: kOsmStandardStyle,
+
                       onMapCreated: onMapCreatedTwo,
                       onStyleLoadedCallback: () => onStyleLoaded(controllerTwo),
                       initialCameraPosition: CameraPosition(

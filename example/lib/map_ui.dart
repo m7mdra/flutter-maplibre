@@ -4,11 +4,11 @@
 
 import 'dart:math';
 
-import 'package:flutter/material.dart';
 import 'package:collection/collection.dart';
+import 'package:flutter/material.dart';
 import 'package:maplibre_gl/mapbox_gl.dart';
+import 'package:maplibre_gl_example/styles.dart';
 
-import 'main.dart';
 import 'page.dart';
 
 final LatLngBounds sydneyBounds = LatLngBounds(
@@ -36,8 +36,8 @@ class MapUiBodyState extends State<MapUiBody> {
   MapUiBodyState();
 
   static final CameraPosition _kInitialPosition = const CameraPosition(
-    target: LatLng(-33.852, 151.211),
-    zoom: 11.0,
+    target: LatLng(15.5007, 32.5599),
+    zoom: 9.0,
   );
 
   MaplibreMapController? mapController;
@@ -48,16 +48,13 @@ class MapUiBodyState extends State<MapUiBody> {
   CameraTargetBounds _cameraTargetBounds = CameraTargetBounds.unbounded;
   MinMaxZoomPreference _minMaxZoomPreference = MinMaxZoomPreference.unbounded;
   int _styleStringIndex = 0;
+
   // Style string can a reference to a local or remote resources.
   // On Android the raw JSON can also be passed via a styleString, on iOS this is not supported.
-  List<String> _styleStrings = [
-    MapboxStyles.MAPBOX_DEMO,
-    "assets/style.json"
-  ];
+  List<String> _styleStrings = [kOsmStandardStyle, kHybirdStyle];
   List<String> _styleStringLabels = [
-    "MAPBOX_STREETS",
+    "OSM",
     "SATELLITE",
-    "LOCAL_ASSET"
   ];
   bool _rotateGesturesEnabled = true;
   bool _scrollGesturesEnabled = true;
@@ -329,7 +326,6 @@ class MapUiBodyState extends State<MapUiBody> {
   @override
   Widget build(BuildContext context) {
     final MaplibreMap mapboxMap = MaplibreMap(
-      accessToken: MapsDemo.ACCESS_TOKEN,
       onMapCreated: onMapCreated,
       initialCameraPosition: _kInitialPosition,
       trackCameraPosition: true,

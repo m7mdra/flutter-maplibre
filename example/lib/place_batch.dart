@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:maplibre_gl/mapbox_gl.dart';
 import 'package:maplibre_gl_example/main.dart';
+import 'package:maplibre_gl_example/styles.dart';
 
 import 'page.dart';
 
@@ -62,6 +63,7 @@ class BatchAddBody extends StatefulWidget {
 
 class BatchAddBodyState extends State<BatchAddBody> {
   BatchAddBodyState();
+
   List<Fill> _fills = [];
   List<Circle> _circles = [];
   List<Line> _lines = [];
@@ -146,7 +148,7 @@ class BatchAddBodyState extends State<BatchAddBody> {
           child: SizedBox(
             height: 200.0,
             child: MaplibreMap(
-              accessToken: MapsDemo.ACCESS_TOKEN,
+              styleString: kOsmStandardStyle,
               onMapCreated: _onMapCreated,
               initialCameraPosition: const CameraPosition(
                 target: LatLng(-33.8, 151.511),

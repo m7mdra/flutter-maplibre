@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:maplibre_gl/mapbox_gl.dart';
 import 'package:maplibre_gl_example/main.dart';
+import 'package:maplibre_gl_example/styles.dart';
 
 import 'page.dart';
 
@@ -132,13 +133,13 @@ class ClickAnnotationBodyState extends State<ClickAnnotationBody> {
   @override
   Widget build(BuildContext context) {
     return MaplibreMap(
-      accessToken: MapsDemo.ACCESS_TOKEN,
       annotationOrder: [
         AnnotationType.fill,
         AnnotationType.line,
         AnnotationType.circle,
         AnnotationType.symbol,
       ],
+      styleString: kOsmStandardStyle,
       onMapCreated: _onMapCreated,
       onStyleLoadedCallback: _onStyleLoaded,
       initialCameraPosition: const CameraPosition(

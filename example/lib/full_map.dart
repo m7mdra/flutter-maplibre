@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maplibre_gl/mapbox_gl.dart';
+import 'package:maplibre_gl_example/styles.dart';
 
 import 'main.dart';
 import 'page.dart';
@@ -49,8 +50,7 @@ class FullMapState extends State<FullMap> {
           ),
         ),
         body: MaplibreMap(
-          styleString: MapboxStyles.MAPBOX_DEMO,
-          accessToken: MapsDemo.ACCESS_TOKEN,
+          styleString: kOsmStandardStyle,
           onMapCreated: _onMapCreated,
           initialCameraPosition: const CameraPosition(target: LatLng(0.0, 0.0)),
           onStyleLoadedCallback: _onStyleLoadedCallback,

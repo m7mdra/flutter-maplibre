@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:maplibre_gl/mapbox_gl.dart';
 import 'package:maplibre_gl_example/main.dart';
 import 'package:maplibre_gl_example/page.dart';
+import 'package:maplibre_gl_example/styles.dart';
 
 class LayerPage extends ExamplePage {
   LayerPage() : super(const Icon(Icons.share), 'Layer');
@@ -28,7 +29,6 @@ class LayerState extends State {
   Widget build(BuildContext context) {
     return Container(
       child: MaplibreMap(
-        accessToken: MapsDemo.ACCESS_TOKEN,
         onMapCreated: _onMapCreated,
         onMapClick: (point, latLong) =>
             print(point.toString() + latLong.toString()),
@@ -38,6 +38,7 @@ class LayerState extends State {
           zoom: 11.0,
         ),
         annotationOrder: const [],
+        styleString: kOsmStandardStyle,
       ),
     );
   }

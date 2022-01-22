@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart'; // ignore: unnecessary_import
 import 'package:maplibre_gl/mapbox_gl.dart';
+import 'package:maplibre_gl_example/styles.dart';
 
 import 'main.dart';
 import 'page.dart';
@@ -85,7 +86,7 @@ class CustomMarkerState extends State<CustomMarker> {
     return new Scaffold(
       body: Stack(children: [
         MaplibreMap(
-          accessToken: MapsDemo.ACCESS_TOKEN,
+          styleString: kOsmStandardStyle,
           trackCameraPosition: true,
           onMapCreated: _onMapCreated,
           onMapLongClick: _onMapLongClickCallback,

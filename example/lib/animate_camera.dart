@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:maplibre_gl/mapbox_gl.dart';
+import 'package:maplibre_gl_example/styles.dart';
 
 
 import 'main.dart';
@@ -40,10 +41,9 @@ class AnimateCameraState extends State<AnimateCamera> {
       children: <Widget>[
         Center(
           child: SizedBox(
-            width: 300.0,
-            height: 200.0,
+
             child: MaplibreMap(
-              accessToken: MapsDemo.ACCESS_TOKEN,
+              styleString: kOsmStandardStyle,
               onMapCreated: _onMapCreated,
               initialCameraPosition:
                   const CameraPosition(target: LatLng(0.0, 0.0)),

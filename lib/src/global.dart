@@ -45,12 +45,10 @@ Future<List<OfflineRegion>> mergeOfflineRegions(
   return regions.map((region) => OfflineRegion.fromMap(region)).toList();
 }
 
-Future<List<OfflineRegion>> getListOfRegions({String? accessToken}) async {
+Future<List<OfflineRegion>> getListOfRegions() async {
   String regionsJson = await _globalChannel.invokeMethod(
     'getListOfRegions',
-    <String, dynamic>{
-      'accessToken': accessToken,
-    },
+    <String, dynamic>{},
   );
   Iterable regions = json.decode(regionsJson);
   return regions.map((region) => OfflineRegion.fromMap(region)).toList();

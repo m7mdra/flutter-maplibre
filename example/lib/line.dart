@@ -8,6 +8,7 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:maplibre_gl/mapbox_gl.dart';
+import 'package:maplibre_gl_example/styles.dart';
 
 import 'main.dart';
 import 'page.dart';
@@ -163,7 +164,7 @@ class LineBodyState extends State<LineBody> {
           child: SizedBox(
             height: 400.0,
             child: MaplibreMap(
-              accessToken: MapsDemo.ACCESS_TOKEN,
+              styleString: kOsmStandardStyle,
               onMapCreated: _onMapCreated,
               onStyleLoadedCallback: _onStyleLoadedCallback,
               initialCameraPosition: const CameraPosition(

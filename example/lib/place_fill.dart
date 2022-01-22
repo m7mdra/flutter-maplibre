@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:maplibre_gl/mapbox_gl.dart';
 import 'package:maplibre_gl_example/main.dart';
+import 'package:maplibre_gl_example/styles.dart';
 
 import 'page.dart';
 
@@ -189,7 +190,8 @@ class PlaceFillBodyState extends State<PlaceFillBody> {
             width: 300.0,
             height: 200.0,
             child: MaplibreMap(
-              accessToken: MapsDemo.ACCESS_TOKEN,
+              styleString: kOsmStandardStyle,
+
               onMapCreated: _onMapCreated,
               onStyleLoadedCallback: _onStyleLoaded,
               initialCameraPosition: const CameraPosition(

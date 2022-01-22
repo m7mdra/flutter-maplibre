@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:maplibre_gl/mapbox_gl.dart';
+import 'package:maplibre_gl_example/styles.dart';
 
 import 'main.dart';
 import 'page.dart';
@@ -181,25 +182,25 @@ class FullMapState extends State<FullMap> {
     ),
     StyleInfo(
       name: "Dem",
-      baseStyle:MapboxStyles.MAPBOX_DEMO,
+      baseStyle:kOsmStandardStyle,
       addDetails: addDem,
       position: CameraPosition(target: LatLng(33.5, -118.1), zoom: 8),
     ),
     StyleInfo(
       name: "Geojson cluster",
-      baseStyle: MapboxStyles.MAPBOX_DEMO,
+      baseStyle: kOsmStandardStyle,
       addDetails: addGeojsonCluster,
       position: CameraPosition(target: LatLng(33.5, -118.1), zoom: 5),
     ),
     StyleInfo(
       name: "Raster",
-      baseStyle: MapboxStyles.MAPBOX_DEMO,
+      baseStyle: kOsmStandardStyle,
       addDetails: addRaster,
       position: CameraPosition(target: LatLng(40, -100), zoom: 3),
     ),
     StyleInfo(
       name: "Image",
-      baseStyle: MapboxStyles.MAPBOX_DEMO,
+      baseStyle: kOsmStandardStyle,
       addDetails: addImage,
       position: CameraPosition(target: LatLng(43, -75), zoom: 6),
     ),
@@ -207,7 +208,7 @@ class FullMapState extends State<FullMap> {
     if (kIsWeb)
       StyleInfo(
         name: "Video",
-        baseStyle: MapboxStyles.MAPBOX_DEMO,
+        baseStyle: kOsmStandardStyle,
         addDetails: addVideo,
         position: CameraPosition(
             target: LatLng(37.562984, -122.514426), zoom: 17, bearing: -96),
@@ -244,7 +245,6 @@ class FullMapState extends State<FullMap> {
           children: [
             MaplibreMap(
               styleString: styleInfo.baseStyle,
-              accessToken: MapsDemo.ACCESS_TOKEN,
               onMapCreated: _onMapCreated,
               initialCameraPosition: styleInfo.position,
               onStyleLoadedCallback: _onStyleLoadedCallback,

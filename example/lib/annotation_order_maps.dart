@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart'; // ignore: unnecessary_import
 import 'package:maplibre_gl/mapbox_gl.dart';
+import 'package:maplibre_gl_example/styles.dart';
 
 import 'main.dart';
 import 'page.dart';
@@ -45,6 +46,8 @@ class _AnnotationOrderBodyState extends State<AnnotationOrderBody> {
                     width: 250.0,
                     height: 250.0,
                     child: MaplibreMap(
+                      styleString: kOsmStandardStyle,
+
                       onMapCreated: onMapCreatedOne,
                       onStyleLoadedCallback: () => onStyleLoaded(controllerOne),
                       initialCameraPosition: CameraPosition(
@@ -79,7 +82,7 @@ class _AnnotationOrderBodyState extends State<AnnotationOrderBody> {
                     width: 250.0,
                     height: 250.0,
                     child: MaplibreMap(
-                      accessToken: MapsDemo.ACCESS_TOKEN,
+                      styleString: kOsmStandardStyle,
                       onMapCreated: onMapCreatedTwo,
                       onStyleLoadedCallback: () => onStyleLoaded(controllerTwo),
                       initialCameraPosition: CameraPosition(
